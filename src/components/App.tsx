@@ -1,19 +1,23 @@
-import NameDisplay from "./NameDisplay";
-import NameForm from "./NameForm";
-import NameProvider from "./NameProvider";
+import ClearStorageButton from "./ClearStorageButton";
+import UserDataDisplay from "./UserDataDisplay";
+import UserDataForm from "./UserDataForm";
+import UserDataProvider from "./UserDataProvider";
 
 function App() {
   return (
     <>
       <h1>Hello World!</h1>
-      <NameProvider>
+      <UserDataProvider>
         <div className="bordered">
-          <NameForm />
+          <UserDataForm />
         </div>
         <div className="bordered">
-          <NameDisplay />
+          <UserDataDisplay />
         </div>
-      </NameProvider>
+        <div className="bordered">
+          <ClearStorageButton />
+        </div>
+      </UserDataProvider>
     </>
   );
 }
