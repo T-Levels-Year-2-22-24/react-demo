@@ -3,11 +3,11 @@ import { NameContext } from "./NameProvider";
 
 function NameForm() {
   const [localName, setLocalName] = useState("");
-  const { name, setName } = useContext(NameContext);
+  const nameContext = useContext(NameContext);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setName(localName);
+    nameContext?.setName(localName);
     setLocalName("");
   };
 
@@ -26,7 +26,7 @@ function NameForm() {
         <button>Submit</button>
       </form>
       <p>Local name is {localName}.</p>
-      <p>Global name (from context) is {name}.</p>
+      <p>Global name (from context) is {nameContext?.name}.</p>
     </>
   );
 }
