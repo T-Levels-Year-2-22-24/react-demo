@@ -32,7 +32,7 @@ function StockSearcher() {
         const latestTime = Object.keys(timeSeries)[0];
         setStockValue(timeSeries[latestTime]["4. close"]);
       } else {
-        setErrorMessage("Invalid response format.");
+        throw Error("Invalid Response Format");
       }
 
       /* How you perform error handling may depend on the application.
