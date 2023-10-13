@@ -1,0 +1,22 @@
+button {
+  width: 30%;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.colour-container {
+  padding: 20px;
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.red-container {
+  background-color: #f99;
+}
+
+.blue-container {
+  background-color: #99f;
+}
