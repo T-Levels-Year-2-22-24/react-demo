@@ -9,20 +9,11 @@ interface ConditionalDisplayProps {
 
 function ConditionalDisplay({ children }: ConditionalDisplayProps) {
   const [display, setDisplay] = useState(true);
-  const [displayText, setDisplayText] = useState(HIDE_DISPLAY_TEXT);
-
-  const handleClick = () => {
-    // useState is asynchronous, meaning we do not know when display will update.
-    const oldDisplay = display;
-    setDisplay(!display);
-    // Using the temporary variable means that setDisplayText always uses the old value.
-    setDisplayText(oldDisplay ? SHOW_DISPLAY_TEXT : HIDE_DISPLAY_TEXT);
-  };
 
   return (
     <>
-      <button type="button" onClick={handleClick}>
-        {displayText}
+      <button type="button" onClick={() => setDisplay(!display)}>
+        {display ? HIDE_DISPLAY_TEXT : SHOW_DISPLAY_TEXT}
       </button>
       {display && children}
     </>
